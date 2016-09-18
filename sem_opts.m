@@ -8,9 +8,9 @@ function opts = sem_opts(opts)
     %   opts - structure with any of the following fields (missing or empty fields will
     %   be set to defaults):
     %           .K - maximum number of event types (default: 20)
-    %           .lambda - stickiness (default: 0.1)
-    %           .alpha - concentration parameter (default: 1)
-    %           .beta - transition noise variance (default: 1)
+    %           .lambda - stickiness (default: 10)
+    %           .alpha - concentration parameter (default: 0.1)
+    %           .beta - transition noise variance (default: 0.1)
     %           .eta - learning rate (default: 0.1)
     %           .f - transition function handle (default: @f_lin)
     %
@@ -23,7 +23,7 @@ function opts = sem_opts(opts)
     def_opts.lambda = 10;
     def_opts.alpha = 0.1;
     def_opts.beta = 0.1;
-    def_opts.eta = 0.9;
+    def_opts.eta = 0.1;
     def_opts.f = @f_lin;
     
     if nargin < 1 || isempty(opts)
