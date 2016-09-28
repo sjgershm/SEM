@@ -1,8 +1,10 @@
-% Demo of the structured event model
+% Segmentation demo
 
+% Run segmentation
 X = [ones(10,2); -ones(10,2)];  % state vectors
 post = sem_segment(X);          % run event segmentation
 
+% plot results
 subplot(1,2,1);
 imagesc(X');
 xlabel('Time step','FontSize',25);
