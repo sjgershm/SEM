@@ -42,7 +42,8 @@ function [post, SEM] = sem_segment(X,opts,SEM)
             else
                 [x(k,:),g{k}] = opts.f(X(n-1,:),SEM.theta(k,:));
             end
-            lik(k) = sum(log(normpdf(X(n,:),x(k,:),opts.beta)));
+            lik(k) = sum(lognormpdf(X(n,:),x(k,:),opts.beta));
+            %if isnan(lik) || isinf(lik); keyboard; end
         end
         
         % posterior
